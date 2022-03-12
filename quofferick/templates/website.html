@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href = "{{url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <h1>Blood Pressure Predictor</h1>
+        <p>Fill out the form to get your Blood Pressure estimate!</p>
+        <form method="POST">
+            <table align="center">
+                <tr>
+                <td class = "label">
+                    <label for="age">Age</label>
+                </td>
+                <td>
+                    <!-- <input value="{{request.form['age']}}"> this will keep the value after submit -->
+                    <input type = "number" id = "age" name = "age" placeholder="Enter age in years"  required>
+                </td>
+                </tr>
+                <tr>
+                <td class = "label">
+                    <label for="weight">Weight</label>
+                </td>
+                <td>
+                    <input type = "number" id = "weight" name = "weight" placeholder="Enter weight in kg"  required>
+                </td> 
+                </tr>
+                <tr>
+                <td colspan="2">
+                    <button>Calculate</button>
+                </td>
+                </tr>
+            </table>         
+        </form>
+        <p id="res">{{res}}</p>
+        <!-- {% block content %} {% endblock %} -->
+    </body>
+</html>
